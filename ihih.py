@@ -98,7 +98,7 @@ class IHIH(dict):
 		)
 		self.r_bool = re.compile(self._bool, re.I)
 
-		if isinstance(filenames, basestring):
+		if isinstance(filenames, str):
 			self.__source = (os.path.realpath(filenames),)
 		else:
 			self.__source = tuple(
@@ -207,7 +207,7 @@ class IHIH(dict):
 
 		Parameters:
 
-		- `value` (:py:func:`basestring` instance): value to parse
+		- `value` (:py:func:`str` instance): value to parse
 		- `data`: instance supporting ``+=`` operator
 		'''
 		quoted = None
@@ -288,7 +288,7 @@ class IHIH(dict):
 			self._cast_str(key),
 			self._parse_value(
 				value
-				if isinstance(value, basestring)
+				if isinstance(value, str)
 				else str(value),
 				bytearray()
 			)
@@ -427,7 +427,7 @@ class IHIHI(IHIH):
 			self._cast_str(key),
 			self._parse_value(
 				value
-				if isinstance(value, basestring)
+				if isinstance(value, str)
 				else str(value),
 				[]
 			)
